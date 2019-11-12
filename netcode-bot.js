@@ -24,8 +24,15 @@ client.on('message', message => {
   
   if(message.content === '!hello'){
     const user = message.mentions.users.first();
-    const member = message.guild.member(user);
-    return message.reply(`Hellooo ${user.tag}, hope you doing good😊`);
+    // If we have a user mentioned
+    if (user) {
+      // Now we get the member from the user
+      const member = message.guild.member(user);
+      // If the member is in the guild
+      if (member) {
+         return message.reply(`Hellooo ${user.tag}, hope you doing good😊`);
+      }
+     }
   }
   if(message.content === '!about'){
     const embed = new Discord.RichEmbed()
