@@ -4,13 +4,12 @@
   "description": "",
   "main": "netcode-bot.js",
   "scripts": {
-    "start": "nodemon netcode-bot.js"
+    "start": "node netcode-bot.js"
   },
   "keywords": [],
   "author": "Angelo",
   "license": "ISC",
   "dependencies": {
-    "discord.js": "^11.5.1",
-    "nodemon": "^1.19.4"
+    "discord.js": "^11.5.1"
   }
 }
