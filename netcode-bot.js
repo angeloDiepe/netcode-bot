@@ -16,12 +16,25 @@ client.on('guildMemberAdd', member => {
   channel.send(`Welcome to the NetCode server😁, ${member}`);
 });
 client.on('message', (msg)=>{
-	console.log(msg)
+	
 })
 client.on('message', message => {
   // Ignore messages that aren't from a guild
   if (!message.guild) return;
-
+  
+  if(message.content === '!hello'){
+    const user = message.mentions.users.first();
+    const member = message.guild.member(user);
+    return message.reply(`Hellooo ${user.tag}, hope you doing good😊`);
+  }
+  if(message.content === '!about'){
+    const embed = new Discord.RichEmbed()
+    .setTitle('About NETCODE')
+    .setDescription('NETCODE is a TEAM of skilled Individual who devoted their strength the developement and administration of Creatif Web App and Network Infrastructures')
+    .setAuthor('Angelo Diepe', './NETCODE-logo.png')   
+    .setColor('#ff9f1c')
+    return message.channel.send(embed);
+  }
   // If the message content starts with "!kick"
   if (message.content.startsWith('!kick')) {
     // Assuming we mention someone in the message, this will return the user
