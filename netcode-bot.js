@@ -1,5 +1,6 @@
 const Discord = require("discord.js");
 const token = process.env.TOKEN ;
+const PORT = process.env.PORT 
 
 const client = new Discord.Client();
 
@@ -15,9 +16,7 @@ client.on('guildMemberAdd', member => {
   // Send the message, mentioning the member
   channel.send(`Welcome to the NetCode server😁, ${member}`);
 });
-client.on('message', (msg)=>{
-	
-})
+
 client.on('message', message => {
   // Ignore messages that aren't from a guild
   if (!message.guild) return;
@@ -38,7 +37,6 @@ client.on('message', message => {
     const embed = new Discord.RichEmbed()
     .setTitle('About NETCODE')
     .setDescription('NETCODE is a TEAM of skilled Individual who devoted their strength the developement and administration of Creatif Web App and Network Infrastructures')
-    .setAuthor('Angelo Diepe', './NETCODE-logo.png')   
     .setColor('#ff9f1c')
     message.channel.send(embed);
   }
