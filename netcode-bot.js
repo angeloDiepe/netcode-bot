@@ -25,12 +25,7 @@ client.on('message', message => {
     const user = message.mentions.users.first();
     // If we have a user mentioned
     if (user) {
-      // Now we get the member from the user
-      const member = message.guild.member(user);
-      // If the member is in the guild
-      if (member) {
         message.channel.send(`Hellooo ${user.tag}, hope you doing good😊`);
-      }
      }
   }
   if(message.content === '!about'){
