@@ -30,7 +30,7 @@ client.on('message', message => {
       const member = message.guild.member(user);
       // If the member is in the guild
       if (member) {
-         return message.reply(`Hellooo ${user.tag}, hope you doing good😊`);
+        message.channel.send(`Hellooo ${user.tag}, hope you doing good😊`);
       }
      }
   }
@@ -40,7 +40,7 @@ client.on('message', message => {
     .setDescription('NETCODE is a TEAM of skilled Individual who devoted their strength the developement and administration of Creatif Web App and Network Infrastructures')
     .setAuthor('Angelo Diepe', './NETCODE-logo.png')   
     .setColor('#ff9f1c')
-    return message.channel.send(embed);
+    message.channel.send(embed);
   }
   // If the message content starts with "!kick"
   if (message.content.startsWith('!kick')) {
